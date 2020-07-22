@@ -25,11 +25,11 @@ const config = {
 
 function preload() {
   
-  this.load.image('fishy', "assets/fish.png");
+  this.load.image('fishy', fish);
   this.load.image('platform', 'https://s3.amazonaws.com/codecademy-content/courses/learn-phaser/physics/platform.png');
-  this.load.image("pipet", "assets/pipey.png");
-  this.load.image("pipeb", "assets/pipeyb.png");
-  this.load.image("bug1", "assets/bird.png");
+  this.load.image("pipet", pipet);
+  this.load.image("pipeb", pipeb);
+  this.load.image("bug1", bird);
 
 }
 

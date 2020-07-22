@@ -16,6 +16,15 @@
 {% endblock %}
 
 {% block body %}
+      <!--img src="{% static 'game/juggle/platform1.png' %}" alt="Eat game">
+      <img src="{% static 'game/juggle/ball.png' %}" alt="Eat game" --->
+      <script>
+        let ball = "{% static 'game/juggle/ball.png' %}";
+        let plat = "{% static 'game/juggle/platform1.png' %}";
+      </script>
       <script src="https://cdn.jsdelivr.net/npm/phaser@3.16.2/dist/phaser.min.js"></script>
-      <script defer src="{%static 'game/juggle/juggle.js' %}" type=text/javascript></script>
+      <script defer src="{%static 'game/juggle/juggle.js' %}" type=text/javascript>
+      let ball = "{% static 'game/juggle/assets/ball.png'% }";
+        let plat = "{% static 'game/juggle/assets/platform1.png'% }";
+        </script>
 {% endblock %}
