@@ -6,8 +6,8 @@ class StartScene extends Phaser.Scene {
 
 
     preload() {
-        this.load.image('star', 'assets/star.png');
-        this.load.image('flower', 'assets/monster(3).png');
+        this.load.image('star', star);
+        this.load.image('flower', flower);
     }
 
     create() {
