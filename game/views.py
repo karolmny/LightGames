@@ -9,3 +9,6 @@ def snake(request):
 
 def eat(request):
     return render(request, "game/eat/eat.html")
+
+def catchCupcakes(request):
+    return render(request, "game/catchCupcakes/catchCupcakes.html")
