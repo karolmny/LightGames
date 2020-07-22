@@ -6,3 +6,6 @@ def index(request):
 
 def snake(request):
     return render(request, "game/snake/snake.html")
+
+def eat(request):
+    return render(request, "game/eat/eat.html")
