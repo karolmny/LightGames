@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
     <meta charset="UTF-8">
     <meta name="viewport" http-equiv="Content-Type" content="width=device-width, initial-scale=1 text/html; charset=utf-8 width=device-width, initial-scale=1"/>
@@ -15,16 +16,23 @@
           width: 100%;
         }
 
-            .footer {
-               position: fixed;
-                left: 0;
-                bottom: 0;
-                width: 100%;
-                background-color:  rgb(59, 47, 47);
-                color: white;
-                 text-align: center;
-               }
+        .footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color:  rgb(59, 47, 47);
+            color: white;
+            text-align: center;
+        }
+        
+        img[type='github'] {
+            max-width: 50px;
+        }
 
+        img[type='netlight'] {
+            max-width: 50px;
+        }
     
         
         </style>
@@ -38,17 +46,25 @@
             <a href="{% url 'game:catchCupcakes' %}" class="w3-button w3-bar-item">Twoplayer</a>
             <a href="{% url 'game:floppyFish' %}" class="w3-button w3-bar-item">FlappyFish</a>
             <a href="{% url 'game:snake' %}" class="w3-button w3-bar-item">Snake</a>
-            <a href="{% url 'game:index' %}" class="w3-button w3-bar-item">About</a>
+            <a href="{% url 'game:aboutUs' %}" class="w3-button w3-bar-item">About</a>
             </nav>
 
         {% block body %}
+
         {% endblock %}
 
         <footer class="w3-container w3-padding-64 w3-center w3-large" style="background-color:#BD9CE0">
             <a href="https://www.facebook.com"><i class="fa fa-facebook-official"></i></a>
-    
             <a href="https://nb-no.facebook.com/NetlightConsulting/"><i class="fa fa-instagram"></i></a>
             <a href="https://no.linkedin.com/company/netlight-consulting"><i class="fa fa-linkedin"></i></a>
+            
+            <a href="https://github.com/karolmny/LightGames">
+                <img type="github" src="{% static 'game/aboutUs/github.png' %}">
+            </a>
+            <a href="https://www.netlight.com/">
+                <img type="netlight" src="{% static 'game/aboutUs/netlightLogo.png' %}">
+            </a>
+
              <p class="w3-medium">
              Laget av Rose Lu, Royce Lu og Karoline Nylænder <a href="./forside.html"  target="_blank"></a>
             </p>
