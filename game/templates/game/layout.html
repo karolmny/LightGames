@@ -15,21 +15,19 @@
           width: 100%;
         }
 
-       
-        
-        
+    
         
         </style>
     </head>
     
     <body>
         <nav class="w3-bar" style=" background-color:#BD9CE0">
-            <a href="./firstPage.html" class="w3-button w3-bar-item">Home</a>
-            <a href="./eat/index.html" class="w3-button w3-bar-item">Eat</a>
-            <a href="./juggle/juggle.html" class="w3-button w3-bar-item">Juggle</a>
-            <a href="./catchCupcakes/index.html" class="w3-button w3-bar-item">Twoplayer</a>
-            <a href="./floppyFish/fish.html" class="w3-button w3-bar-item">FlappyFish</a>
-            <a href="./firstPage.html" class="w3-button w3-bar-item">About</a>
+            <a href="{% url 'game:index' %}" class="w3-button w3-bar-item">Home</a>
+            <a href="{% url 'game:eat' %}" class="w3-button w3-bar-item">Eat</a>
+            <a href="{% url 'game:juggle' %}" class="w3-button w3-bar-item">Juggle</a>
+            <a href="{% url 'game:catchCupcakes' %}" class="w3-button w3-bar-item">Twoplayer</a>
+            <a href="{% url 'game:floppyFish' %}" class="w3-button w3-bar-item">FlappyFish</a>
+            <a href="{% url 'game:index' %}" class="w3-button w3-bar-item">About</a>
             </nav>
 
         {% block body %}

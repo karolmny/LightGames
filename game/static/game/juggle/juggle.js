@@ -31,7 +31,7 @@ const ballSize = 30;
 
 function preload ()
 {
-    this.load.image("ball", "assets/ball.png"); 
+    this.load.image("ball", "juggle/assets/ball.png"); 
     this.load.image("platform", "assets/platform1.png")
  }
 

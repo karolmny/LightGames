@@ -30,40 +30,42 @@
     
 {% endblock %}
 
+
+
 {% block body %}
    <p>Hei dette funker 2</p>
 
    <table class="center" cellspacing="0" cellpadding="0">
        <tr>
            <th>
-            <a href="eat/index.html">
+            <a href="{% url 'game:eat' %}">
                 <img src="{% static 'game/eat/eat.png' %}" alt="Eat game">
             </a>
            </th>
            <th>
-                <a href="eat/index.html">
+                <a href="{% url 'game:catchCupcakes' %}">
                 <img src="{% static 'game/catchCupCakes/twoplayer.png' %}" alt="catchCupCake">
             </a>
            </th>
            <th>
-                <a href="eat/index.html">
+                <a href="{% url 'game:snake' %}">
                 <img src="{% static 'game/snake/snake.png' %}" alt="Eat game">
                 </a>
            </th>
        </tr>
        <tr>
            <th>
-                <a href="eat/index.html">
+                <a href="{% url 'game:juggle' %}">
                 <img src="{% static 'game/juggle/juggle.png' %}" alt="Eat game">
             </a>
            </th>
            <th>
-            <a href="eat/index.html">
+            <a href="{% url 'game:floppyFish' %}">
                 <img src="{% static 'game/floppyFish/flappyfish.png' %}" alt="Eat game">
             </a>
            </th>
            <th>
-               <p> SPILL 6?</p>
+               <p style="text-align: center;"> SPILL 6? </p>
            </th>
        </tr>
    </table>
