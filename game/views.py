@@ -15,3 +15,6 @@ def catchCupcakes(request):
 
 def floppyFish(request):
     return render(request, "game/floppyFish/fish.html")
+
+def juggle(request):
+    return render(request, "game/juggle/juggle.html")
