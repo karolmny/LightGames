@@ -12,3 +12,6 @@ def eat(request):
 
 def catchCupcakes(request):
     return render(request, "game/catchCupcakes/catchCupcakes.html")
+
+def floppyFish(request):
+    return render(request, "game/floppyFish/fish.html")
