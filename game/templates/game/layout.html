@@ -2,13 +2,18 @@
 {% load static %}
 <html lang="en">
     <meta charset="UTF-8">
-    <meta name="viewport" http-equiv="Content-Type" content="width=device-width, initial-scale=1 text/html; charset=utf-8 width=device-width, initial-scale=1"/>
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css"> 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <head>
         {% block head %}
-        
         {% endblock %}
+
+        <title> LightGames - {% block title %} gamename {% endblock %}</title>
+        <link rel="stylesheet" href="{%static 'game/layout.css' %}"> 
+        <script src="https://cdn.jsdelivr.net/npm/phaser@3.16.2/dist/phaser.min.js"></script>
+        
+    <!--
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css"> 
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
         <style>
         body { 
           font-family: arial, sans-serif;
@@ -16,46 +21,32 @@
           width: 100%;
         }
 
-        .footer {
-            position: fixed;
-            left: 0;
-            bottom: 0;
-            width: 100%;
-            background-color:  rgb(59, 47, 47);
-            color: white;
-            text-align: center;
-        }
-        
-        img[type='github'] {
-            max-width: 50px;
-            margin: auto;
-        }
-
-        img[type='netlight'] {
-            max-width: 50px;
-            margin: auto;
-        }
-    
         
         </style>
+    -->
     </head>
     
     <body>
-        <nav class="w3-bar" style=" background-color:#BD9CE0">
-            <a href="{% url 'game:index' %}" class="w3-button w3-bar-item">Home</a>
-            <a href="{% url 'game:eat' %}" class="w3-button w3-bar-item">Eat</a>
-            <a href="{% url 'game:juggle' %}" class="w3-button w3-bar-item">Juggle</a>
-            <a href="{% url 'game:catchCupcakes' %}" class="w3-button w3-bar-item">Twoplayer</a>
-            <a href="{% url 'game:floppyFish' %}" class="w3-button w3-bar-item">FlappyFish</a>
-            <a href="{% url 'game:snake' %}" class="w3-button w3-bar-item">Snake</a>
-            <a href="{% url 'game:aboutUs' %}" class="w3-button w3-bar-item">About</a>
-            </nav>
+        <!-- Navigeringsbar -->
+        <nav class="nav">
+            <a href="{% url 'game:index' %}" class="nav-button">Home</a>
+            <a href="{% url 'game:eat' %}" class="nav-button">Eat</a>
+            <a href="{% url 'game:juggle' %}" class="nav-button">Juggle</a>
+            <a href="{% url 'game:catchCupcakes' %}" class="nav-button">CatchCupcakes</a>
+            <a href="{% url 'game:floppyFish' %}" class="nav-button">FlappyFish</a>
+            <a href="{% url 'game:snake' %}" class="nav-button">Snake</a>
+            <a href="{% url 'game:aboutUs' %}" class="nav-button">About</a>
+        </nav>
+        
+        <h1>{% block gameTitle %} {% endblock %}</h1>
+        <div id="gameDisplay">
+            {% block body %}
 
-        {% block body %}
+            {% endblock %}
+        </div>
 
-        {% endblock %}
-
-        <footer class="w3-container w3-padding-64 w3-center w3-large" style="background-color:#BD9CE0">
+        <!-- Footer -->
+        <footer class="footer">
             <a href="https://github.com/karolmny/LightGames">
                 <img type="github" src="{% static 'game/aboutUs/github.png' %}">
             </a>
@@ -63,9 +54,9 @@
                 <img type="netlight" src="{% static 'game/aboutUs/netlight.png' %}">
             </a>
 
-             <p class="w3-medium">
-             Laget av Rose Lu, Royce Lu og Karoline Nylænder <a href="./forside.html"  target="_blank"></a>
+            <p>
+             Laget av <a href="{% url 'game:aboutUs' %}"  target="_blank">Rose Lu, Royce Lu og Karoline Nylænder </a>
             </p>
-            </footer>
+        </footer>
     </body>
 </html>

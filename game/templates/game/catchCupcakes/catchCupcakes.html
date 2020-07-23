@@ -2,8 +2,6 @@
 {% load static %}
 
 {% block head %}
-  <meta charset="utf-8"/>
-  <title>Catch the Cupcakes</title>
   <link rel="icon" href="assets/cupcake.png" type="image/icon type">
   <style>
     body {
@@ -17,15 +15,16 @@
       margin-bottom: 0px;
     }
   </style>
-  <script src="https://cdn.jsdelivr.net/npm/phaser@3.16.2/dist/phaser.min.js"></script>
 {% endblock %}
 
+{% block title %} Catch cupcakes {% endblock %}
+{% block gameTitle %} Catch cupcakes {% endblock %}
+
 {% block body %}
-  <h1>Catch the Cupcakes</h1>
   <script>
-    let one = "{% static 'game/catchCupcakes/one.png' %}";
-    let two = "{% static 'game/catchCupcakes/two.png' %}";
-    let food = "{% static 'game/catchCupcakes/cupcake.png' %}";
+    let one = "{% static 'game/catchCupcakes/assets/one.png' %}";
+    let two = "{% static 'game/catchCupcakes/assets/two.png' %}";
+    let food = "{% static 'game/catchCupcakes/assets/cupcake.png' %}";
   </script>
   <script src="{%static 'game/catchCupcakes/start.js' %}" type=text/javascript></script>
   <script src="{%static 'game/catchCupcakes/GameScene.js' %}" type=text/javascript></script>

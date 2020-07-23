@@ -4,6 +4,7 @@ const config = {
     type: Phaser.AUTO,
     width: 600,
     height: 600,
+    parent: 'gameDisplay',
     backgroundColor: 0xbbb5a4,
     physics: {
         default: 'arcade',

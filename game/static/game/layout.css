@@ -1,0 +1,46 @@
+body {
+    width: 100%;
+    text-align: center;
+    font-size: large;
+    margin: auto;
+}
+
+h1 {
+    font-size: 75px;
+    color: black;
+    text-transform: uppercase;
+    margin-bottom: 0px;
+}
+
+#gameDisplay {
+    margin: 30px;
+}
+
+/* Nav-bar */
+.nav {
+    color: white;
+    background-color: #BD9CE0;
+    margin: 0;
+    padding: 20px;
+}
+.nav-button {
+    margin: auto 10px;
+    padding: 10px;
+}
+.nav-button:hover {
+    background-color: pink;
+    cursor: pointer;
+}
+
+/* Footer */
+.footer {
+    color: white;
+    background-color: #BD9CE0;
+    margin: 0;
+    padding: 30px;
+}
+
+img[type='github'], img[type='netlight'] {
+    max-width: 50px;
+    margin: auto;
+}

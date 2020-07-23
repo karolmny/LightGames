@@ -1,23 +1,14 @@
 {% extends "game/layout.html" %}
 {% load static %}
 
-{% block head %}
-    <script src="https://cdn.jsdelivr.net/npm/phaser@3.16.2/dist/phaser.min.js"></script>
-    <style>
-        body {
-            margin: auto;
-            text-align: center;
-            font-family: 'Courier New';
-        }
-    </style>
-{% endblock %}
+{% block title %} Eat the stars {% endblock %}
+{% block gameTitle %} Eat the stars {% endblock %}
 
 {% block body %}
-    <h1>Welcome</h1>
     <script>
-        let star = "{% static 'game/eat/star.png' %}"
-        let flower = "{% static 'game/eat/monster(3).png' %}"
-        let blood = "{% static 'game/eat/blood.png' %}"
+        let star = "{% static 'game/eat/assets/star.png' %}"
+        let flower = "{% static 'game/eat/assets/monster(3).png' %}"
+        let blood = "{% static 'game/eat/assets/blood.png' %}"
     </script>
     <script src="{%static 'game/eat/StartScene.js' %}" type=text/javascript></script>
     <script src="{%static 'game/eat/GameScene.js' %}" type=text/javascript></script>

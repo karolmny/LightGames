@@ -7,6 +7,7 @@ const config = {
     type: Phaser.AUTO,
     width: screenWidth,
     height: screenHeight,
+    parent: 'gameDisplay',
     backgroundColor: "#DEDEDE",
     physics: { default: 'arcade' },
     scene: [ StartScene, GameScene ]
