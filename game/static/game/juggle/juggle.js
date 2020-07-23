@@ -10,6 +10,7 @@ var config = {
         type: Phaser.AUTO,
         width: ScreenWidth,
         height: ScreenHeight,
+        parent: 'gameDisplay',
         backgroundColor: "#f0f3BD",
         physics: {
             default: 'arcade',

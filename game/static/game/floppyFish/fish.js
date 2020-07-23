@@ -7,7 +7,8 @@ const ScreenWidth = screen.width*0.8;
 const config = {
 	type: Phaser.AUTO,
 	width: ScreenWidth,
-	height: ScreenHeight,
+  height: ScreenHeight,
+  parent: 'gameDisplay',
   backgroundColor: "#0A99ff",
   physics: {
     default: 'arcade',

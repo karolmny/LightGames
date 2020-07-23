@@ -8,22 +8,10 @@
         {% endblock %}
 
         <title> LightGames - {% block title %} gamename {% endblock %}</title>
+        <link rel="icon" href="{% static 'game/catchCupcakes/assets/cupcake.png' %}" type="image/icon type">
         <link rel="stylesheet" href="{%static 'game/layout.css' %}"> 
+        {% block style %} {% endblock %}
         <script src="https://cdn.jsdelivr.net/npm/phaser@3.16.2/dist/phaser.min.js"></script>
-        
-    <!--
-        <link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css"> 
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
-        <style>
-        body { 
-          font-family: arial, sans-serif;
-          border-collapse: collapse;
-          width: 100%;
-        }
-
-        
-        </style>
-    -->
     </head>
     
     <body>
@@ -38,7 +26,7 @@
             <a href="{% url 'game:aboutUs' %}" class="nav-button">About</a>
         </nav>
         
-        <h1>{% block gameTitle %} {% endblock %}</h1>
+        <h1>{% block header %} LightGames.no {% endblock %}</h1>
         <div id="gameDisplay">
             {% block body %}
 

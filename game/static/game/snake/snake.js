@@ -13,7 +13,7 @@ const yStart = Math.round((Math.random()*yCanvas));
 
 function setup() {
     
-    createCanvas(xCanvas, yCanvas);
+    createCanvas(xCanvas, yCanvas).parent("gameDisplay");   // Spillet plasseres inni gameDisplay-div i HTML
     snakey = new Snake();
     pickLocation();
     frameRate(8);
