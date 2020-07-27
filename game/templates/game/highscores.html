@@ -2,8 +2,89 @@
 {% load static %}
 
 {% block style %}
-    <link rel="stylesheet" type="text/css" href="{% static 'game/highscores/highscores.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'game/highscores/highscores.css' %}">
 {% endblock %}
 
 {% block title %} High scores {% endblock %}
 {% block header %} High scores {% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="picGame">
+            <a href="{% url 'game:snake' %}">
+                <img src="{% static 'game/snake/snake.png' %}" alt="snake">
+            </a>        </div>
+        <div class="scoreGame">
+            <h2>Snake</h2>
+            <ol>
+                <li>Rose</li>
+                <li>Karoline</li>
+                <li>Royce</li>
+            </ol>
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="picGame">
+            <a href="{% url 'game:eat' %}">
+                <img src="{% static 'game/eat/eat.png' %}" alt="Eat game">
+            </a>
+        </div>
+        <div class="scoreGame">
+            <h2>Eat the stars</h2>
+            <ol>
+                <li>Rose</li>
+                <li>Karoline</li>
+                <li>Royce</li>
+            </ol>
+        </div>
+    </div>  
+
+    <div class="container">
+        <div class="picGame">
+            <a href="{% url 'game:catchCupcakes' %}">
+                <img src="{% static 'game/catchCupCakes/catchCupcakes.PNG' %}" alt="catchCupCake">
+            </a>
+        </div>
+        <div class="scoreGame">
+            <h2>Catch cupcakes</h2>
+            <ol>
+                <li>Rose</li>
+                <li>Karoline</li>
+                <li>Royce</li>
+            </ol>
+        </div>
+    </div>  
+
+    <div class="container">
+        <div class="picGame">
+            <a href="{% url 'game:juggle' %}">
+                <img src="{% static 'game/juggle/juggle.png' %}" alt="juggle">
+            </a>
+        </div>
+        <div class="scoreGame">
+            <h2>Juggle</h2>
+            <ol>
+                <li>Rose</li>
+                <li>Karoline</li>
+                <li>Royce</li>
+            </ol>
+        </div>
+    </div>  
+
+    <div class="container">
+        <div class="picGame">
+            <a href="{% url 'game:floppyFish' %}">
+                <img src="{% static 'game/floppyFish/flappyfish.png' %}" alt="flappyfish">
+            </a>
+        </div>
+        <div class="scoreGame">
+            <h2>Floppy fish</h2>
+            <ol>
+                <li>Rose</li>
+                <li>Karoline</li>
+                <li>Royce</li>
+            </ol>
+        </div>
+    </div>  
+{% endblock %}

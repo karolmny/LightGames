@@ -1,0 +1,18 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 3%;
+    border-style: dashed solid;
+    border-width: 90%;
+    padding: 1%;
+}
+
+.picGame {
+    margin: auto 2%;
+}
+
+.scoreGame {
+    margin: auto 2%;
+}
