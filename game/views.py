@@ -23,3 +23,6 @@ def juggle(request):
 #Nettsiden
 def aboutUs(request):
     return render(request, "game/aboutUs.html")
+
+def highscores(request):
+    return render(request, "game/highscores.html")

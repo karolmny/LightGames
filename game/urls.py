@@ -13,4 +13,5 @@ urlpatterns = [
 
     #Nettsiden
     path("aboutUs/", views.aboutUs, name="aboutUs"),
+    path("highscores/", views.highscores, name="highscores"),
 ]
