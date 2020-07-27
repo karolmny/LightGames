@@ -17,14 +17,14 @@
     <body>
         <!-- Navigeringsbar -->
         <nav class="nav">
-            <a href="{% url 'game:index' %}" class="nav-button">Home</a>
+            <a href="{% url 'game:index' %}" class="nav-button"><b>Home</b></a>
             <a href="{% url 'game:eat' %}" class="nav-button">Eat</a>
             <a href="{% url 'game:juggle' %}" class="nav-button">Juggle</a>
             <a href="{% url 'game:catchCupcakes' %}" class="nav-button">CatchCupcakes</a>
             <a href="{% url 'game:floppyFish' %}" class="nav-button">FlappyFish</a>
             <a href="{% url 'game:snake' %}" class="nav-button">Snake</a>
-            <a href="{% url 'game:highscores' %}" class="nav-button">High scores</a>
-            <a href="{% url 'game:aboutUs' %}" class="nav-button">About</a>
+            <a href="{% url 'game:highscores' %}" class="nav-button"><b>High scores</b></a>
+            <a href="{% url 'game:aboutUs' %}" class="nav-button"><b>About</b></a>
         </nav>
         
         <h1>{% block header %} LightGames.no {% endblock %}</h1>
