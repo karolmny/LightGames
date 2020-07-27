@@ -7,7 +7,7 @@ class GameScene extends Phaser.Scene {
     //Variabler
     score1 = 0;
     score2 = 0;
-    timer = 60*1000;
+    timer = 3*1000;
 
     scoreText1;
     scoreText2;
@@ -90,11 +90,7 @@ class GameScene extends Phaser.Scene {
         this.timer--;
         let seconds = this.timer/100;
         this.timerText.setText('TID IGJEN: ' + seconds + 's');
-        if(gameState.player1.x <= 12.8 || gameState.player1.x >= 587 ||
-            gameState.player1.y <= 12.8 || gameState.player1.y >= 587 ||
-            gameState.player2.x <= 12.8 || gameState.player2.x >= 587 ||
-            gameState.player2.y <= 12.8 || gameState.player2.y >= 587 ||
-            this.timer < 0) {
+        if(this.timer < 0) {
                 this.physics.pause();
                 this.timerText.setText('TID IGJEN: 0s')
                 this.gameoverText = this.add.text(180, 200, 'Game Over', { fontSize: '40px', fill: '#000000' });
@@ -112,7 +108,7 @@ class GameScene extends Phaser.Scene {
                 this.input.on('pointerup', () => {
                     this.score1=0;
                     this.score2=0;
-                    this.timer=120*1000;
+                    this.timer=3*1000;
                     this.scene.restart();
                     });
 
