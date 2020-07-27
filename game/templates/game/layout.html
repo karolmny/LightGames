@@ -4,11 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <head>
-        {% block head %}
-        {% endblock %}
-
-        <title> LightGames - {% block title %} gamename {% endblock %}</title>
-        <link rel="icon" href="{% static 'game/catchCupcakes/assets/cupcake.png' %}" type="image/icon type">
+        <title> LightGames - {% block title %}  {% endblock %}</title>
+        <link rel="icon" href="{% static 'game/icon.png' %}" type="image/icon type">
         <link rel="stylesheet" href="{%static 'game/layout.css' %}"> 
         {% block style %} {% endblock %}
         <script src="https://cdn.jsdelivr.net/npm/phaser@3.16.2/dist/phaser.min.js"></script>
