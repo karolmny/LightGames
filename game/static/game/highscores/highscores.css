@@ -3,8 +3,11 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
+}
+
+.item {
     margin: 3%;
-    border-style: dashed solid;
+    border-style: solid dashed;
     border-width: 90%;
     padding: 1%;
 }

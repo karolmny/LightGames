@@ -10,6 +10,7 @@
 
 {% block body %}
     <div class="container">
+    <div class="item">
         <div class="picGame">
             <a href="{% url 'game:snake' %}">
                 <img src="{% static 'game/snake/snake.png' %}" alt="snake">
@@ -17,14 +18,12 @@
         <div class="scoreGame">
             <h2>Snake</h2>
             <ol>
-                <li>Rose</li>
-                <li>Karoline</li>
-                <li>Royce</li>
+                Burde egt hente fra en databae elns...
             </ol>
         </div>
     </div>
     
-    <div class="container">
+    <div class="item">
         <div class="picGame">
             <a href="{% url 'game:eat' %}">
                 <img src="{% static 'game/eat/eat.png' %}" alt="Eat game">
@@ -40,7 +39,7 @@
         </div>
     </div>  
 
-    <div class="container">
+    <div class="item">
         <div class="picGame">
             <a href="{% url 'game:catchCupcakes' %}">
                 <img src="{% static 'game/catchCupCakes/catchCupcakes.PNG' %}" alt="catchCupCake">
@@ -56,7 +55,7 @@
         </div>
     </div>  
 
-    <div class="container">
+    <div class="item">
         <div class="picGame">
             <a href="{% url 'game:juggle' %}">
                 <img src="{% static 'game/juggle/juggle.png' %}" alt="juggle">
@@ -72,7 +71,7 @@
         </div>
     </div>  
 
-    <div class="container">
+    <div class="item">
         <div class="picGame">
             <a href="{% url 'game:floppyFish' %}">
                 <img src="{% static 'game/floppyFish/flappyfish.png' %}" alt="flappyfish">
@@ -87,4 +86,5 @@
             </ol>
         </div>
     </div>  
+    </div>
 {% endblock %}
