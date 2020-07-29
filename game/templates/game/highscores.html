@@ -50,17 +50,20 @@
                                 console.log(text[i].name + ": " + text[i].score);
                                 var scoretext =  text[i].name + ": " + text[i].score;
                                 document.getElementById(i).innerHTML = scoretext;
+                            } else if (text[i].game === "Eat the stars"){
+                            console.log(text[i].name + ": " + text[i].score);
+                            var scoretext =  text[i].name + ": " + text[i].score;
+                            document.getElementById(i+10).innerHTML = scoretext;
+                            } else if (text[i].game === "Catch Cupcakes"){
+                            console.log(text[i].name + ": " + text[i].score);
+                            var scoretext =  text[i].name + ": " + text[i].score;
+                            document.getElementById(i+20).innerHTML = scoretext;
                             }
+      
                         }
-
-                        
-
                     
                     }
                 }
-
-
-
        
             </script>
     
@@ -73,12 +76,21 @@
         <div class="scoreGame">
             <h2>Eat the stars</h2>
             <ol>
-                <li>Rose</li>
-                <li>Karoline</li>
-                <li>Royce</li>
+                <li id="10"></li>
+                <li id="11"></li>
+                <li id="12"></li>
+                <li id="13"></li>
+                <li id="14"></li>
+                <li id="15"></li>
+                <li id="16"></li>
+                <li id="17"></li>
+                <li id="18"></li>
+                <li id="19"></li>
             </ol>
         </div>
     </div>  
+
+
 
     <div class="item">
         <div class="picGame">
@@ -89,9 +101,16 @@
         <div class="scoreGame">
             <h2>Catch cupcakes</h2>
             <ol>
-                <li>Rose</li>
-                <li>Karoline</li>
-                <li>Royce</li>
+                <li id="20"></li>
+                <li id="21"></li>
+                <li id="22"></li>
+                <li id="23"></li>
+                <li id="24"></li>
+                <li id="25"></li>
+                <li id="26"></li>
+                <li id="27"></li>
+                <li id="28"></li>
+                <li id="29"></li>
             </ol>
         </div>
     </div>  
