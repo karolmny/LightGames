@@ -9,6 +9,7 @@
 {% block header %} High scores {% endblock %}
 
 {% block body %}
+
     <div class="container">
     <div class="item">
         <div class="picGame">
@@ -18,10 +19,50 @@
         <div class="scoreGame">
             <h2>Snake</h2>
             <ol>
-                Burde egt hente fra en databae elns...
+                <li id="0"></li>
+                <li id="1"></li>
+                <li id="2"></li>
+                <li id="3"></li>
+                <li id="4"></li>
+                <li id="5"></li>
+                <li id="6"></li>
+                <li id="7"></li>
+                <li id="8"></li>
+                <li id="9"></li>
+                
             </ol>
         </div>
     </div>
+    
+    <script>
+
+    
+            const http = new XMLHttpRequest();
+                const url = 'https://sheet2api.com/v1/HxiceVkT7C4B/high-scores';
+                http.open("GET", url, true);
+                http.send();
+                http.onreadystatechange = function() {
+
+                    if (this.readyState == 4 && this.status == 200) {
+                        const text = JSON.parse(this.responseText);
+                        for (let i=0; i <text.length; i++){
+                            if (text[i].game === "Snake"){
+                                console.log(text[i].name + ": " + text[i].score);
+                                var scoretext =  text[i].name + ": " + text[i].score;
+                                document.getElementById(i).innerHTML = scoretext;
+                            }
+                        }
+
+                        
+
+                    
+                    }
+                }
+
+
+
+       
+            </script>
     
     <div class="item">
         <div class="picGame">
