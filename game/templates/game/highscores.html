@@ -9,142 +9,66 @@
 {% block header %} High scores {% endblock %}
 
 {% block body %}
-
     <div class="container">
-    <div class="item">
-        <div class="picGame">
-            <a href="{% url 'game:snake' %}">
-                <img src="{% static 'game/snake/snake.png' %}" alt="snake">
-            </a>        </div>
-        <div class="scoreGame">
-            <h2>Snake</h2>
-            <ol>
-                <li id="0"></li>
-                <li id="1"></li>
-                <li id="2"></li>
-                <li id="3"></li>
-                <li id="4"></li>
-                <li id="5"></li>
-                <li id="6"></li>
-                <li id="7"></li>
-                <li id="8"></li>
-                <li id="9"></li>
-                
-            </ol>
+        <div class="item">
+            <div class="picGame">
+                <a href="{% url 'game:snake' %}">
+                    <img src="{% static 'game/snake/snake.png' %}" alt="snake">
+                </a>        
+            </div>
+            <div class="scoreGame">
+                <h2>Snake</h2>
+                <ol id="score1">Mangler highscore-data..</ol>
+            </div>
         </div>
+        
+        <div class="item">
+            <div class="picGame">
+                <a href="{% url 'game:eat' %}">
+                    <img src="{% static 'game/eat/eat.png' %}" alt="Eat game">
+                </a>
+            </div>
+            <div class="scoreGame">
+                <h2>Eat the stars</h2>
+                <ol id="score2">Mangler highscore-data..</ol>
+            </div>
+        </div>  
+
+        <div class="item">
+            <div class="picGame">
+                <a href="{% url 'game:catchCupcakes' %}">
+                    <img src="{% static 'game/catchCupCakes/catchCupcakes.PNG' %}" alt="catchCupCake">
+                </a>
+            </div>
+            <div class="scoreGame">
+                <h2>Catch cupcakes</h2>
+                <ol id="score3">Mangler highscore-data..</ol>
+            </div>
+        </div>  
+
+        <div class="item">
+            <div class="picGame">
+                <a href="{% url 'game:juggle' %}">
+                    <img src="{% static 'game/juggle/juggle.png' %}" alt="juggle">
+                </a>
+            </div>
+            <div class="scoreGame">
+                <h2>Juggle</h2>
+                <ol id="score4">Mangler highscore-data..</ol>
+            </div>
+        </div>  
+
+        <div class="item">
+            <div class="picGame">
+                <a href="{% url 'game:floppyFish' %}">
+                    <img src="{% static 'game/floppyFish/flappyfish.png' %}" alt="flappyfish">
+                </a>
+            </div>
+            <div class="scoreGame">
+                <h2>Floppy fish</h2>
+                <ol id="score5">Mangler highscore-data..</ol>
+            </div>
+        </div>  
     </div>
-    
-    <script>
-
-    
-            const http = new XMLHttpRequest();
-                const url = 'https://sheet2api.com/v1/HxiceVkT7C4B/high-scores';
-                http.open("GET", url, true);
-                http.send();
-                http.onreadystatechange = function() {
-
-                    if (this.readyState == 4 && this.status == 200) {
-                        const text = JSON.parse(this.responseText);
-                        for (let i=0; i <text.length; i++){
-                            if (text[i].game === "Snake"){
-                                console.log(text[i].name + ": " + text[i].score);
-                                var scoretext =  text[i].name + ": " + text[i].score;
-                                document.getElementById(i).innerHTML = scoretext;
-                            } else if (text[i].game === "Eat the stars"){
-                            console.log(text[i].name + ": " + text[i].score);
-                            var scoretext =  text[i].name + ": " + text[i].score;
-                            document.getElementById(i+10).innerHTML = scoretext;
-                            } else if (text[i].game === "Catch Cupcakes"){
-                            console.log(text[i].name + ": " + text[i].score);
-                            var scoretext =  text[i].name + ": " + text[i].score;
-                            document.getElementById(i+20).innerHTML = scoretext;
-                            }
-      
-                        }
-                    
-                    }
-                }
-       
-            </script>
-    
-    <div class="item">
-        <div class="picGame">
-            <a href="{% url 'game:eat' %}">
-                <img src="{% static 'game/eat/eat.png' %}" alt="Eat game">
-            </a>
-        </div>
-        <div class="scoreGame">
-            <h2>Eat the stars</h2>
-            <ol>
-                <li id="10"></li>
-                <li id="11"></li>
-                <li id="12"></li>
-                <li id="13"></li>
-                <li id="14"></li>
-                <li id="15"></li>
-                <li id="16"></li>
-                <li id="17"></li>
-                <li id="18"></li>
-                <li id="19"></li>
-            </ol>
-        </div>
-    </div>  
-
-
-
-    <div class="item">
-        <div class="picGame">
-            <a href="{% url 'game:catchCupcakes' %}">
-                <img src="{% static 'game/catchCupCakes/catchCupcakes.PNG' %}" alt="catchCupCake">
-            </a>
-        </div>
-        <div class="scoreGame">
-            <h2>Catch cupcakes</h2>
-            <ol>
-                <li id="20"></li>
-                <li id="21"></li>
-                <li id="22"></li>
-                <li id="23"></li>
-                <li id="24"></li>
-                <li id="25"></li>
-                <li id="26"></li>
-                <li id="27"></li>
-                <li id="28"></li>
-                <li id="29"></li>
-            </ol>
-        </div>
-    </div>  
-
-    <div class="item">
-        <div class="picGame">
-            <a href="{% url 'game:juggle' %}">
-                <img src="{% static 'game/juggle/juggle.png' %}" alt="juggle">
-            </a>
-        </div>
-        <div class="scoreGame">
-            <h2>Juggle</h2>
-            <ol>
-                <li>Rose</li>
-                <li>Karoline</li>
-                <li>Royce</li>
-            </ol>
-        </div>
-    </div>  
-
-    <div class="item">
-        <div class="picGame">
-            <a href="{% url 'game:floppyFish' %}">
-                <img src="{% static 'game/floppyFish/flappyfish.png' %}" alt="flappyfish">
-            </a>
-        </div>
-        <div class="scoreGame">
-            <h2>Floppy fish</h2>
-            <ol>
-                <li>Rose</li>
-                <li>Karoline</li>
-                <li>Royce</li>
-            </ol>
-        </div>
-    </div>  
-    </div>
+    <script src="{% static 'game/highscores/highscores.js' %}"></script>
 {% endblock %}
