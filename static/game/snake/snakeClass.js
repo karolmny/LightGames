@@ -8,6 +8,8 @@ function Snake(){
     
     this.update = function(){
         
+        console.log("heii");
+        console.log("dette funker ikke")
         for (var i = 0; i < this.tail.length -1; i++){
             this.tail[i] = this.tail[i+1];
         }
@@ -30,6 +32,7 @@ function Snake(){
             this.y = 0;
         }
         
+        
 
     }
     
@@ -39,7 +42,8 @@ function Snake(){
             stroke(0);
             rect(this.tail[i].x, this.tail[i].y, scl, scl);
         }
-        fill("#c4fffc")
+        fill("#ffffff")
+        //fill("#c4fffc")
         rect(this.x, this.y, scl, scl);
         
     }
@@ -47,11 +51,13 @@ function Snake(){
     this.movement = function(x, y){
         this.xSpeed = x;
         this.ySpeed = y;
+        console.log("hei");
     }
     
     this.eat = function(pos){
         var dis = dist(this.x, this.y, pos.x, pos.y);
         if (dis < 1){
+            console.log("im eating")
             this.total++;
             return true;
         } else {

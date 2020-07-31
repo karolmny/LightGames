@@ -16,4 +16,23 @@
     let ball = "{% static 'game/juggle/assets/ball.png'% }";
     let plat = "{% static 'game/juggle/assets/platform1.png'% }";
   </script>
+
+    <div class="name">
+            <h3>Trigger Button Click on Enter</h3>
+            <p>Press the "Enter" key inside the input field to trigger the button.</p>
+            <p> Tekst om hvordan man spiller</p>
+    
+             <input id="name" placeholder="name">
+            <button onclick="javascript:alert('Hello World!')" id="namebtn">Save name</button>
+    
+            <script>
+            var input = document.getElementById("name");
+            input.addEventListener("keyup", function(event) {
+            if (event.keyCode === 13) {
+                event.preventDefault();
+                document.getElementById("namebtn").click();
+            }
+            });
+            </script>
+        </div >
 {% endblock %}

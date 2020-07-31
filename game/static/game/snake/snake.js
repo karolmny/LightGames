@@ -26,6 +26,7 @@ function CreateBackground() {
         for (var y = 0; y < yCanvas; y += scl){
             strokeWeight(0)
             if (i%2 > 0){
+                fill("#9bba5a");
                 fill("#b0d466");  
                 rect(x, y, scl, scl);
             } else {
@@ -42,11 +43,13 @@ function CreateBackground() {
 
 
 function draw(){
+    
     background("#9bba5a");
     CreateBackground();
     snakey.endgame();
     snakey.update();
     snakey.show();
+
     
     if (snakey.eat(food)){
         pickLocation();
@@ -66,10 +69,12 @@ function pickLocation(){
     var rows = floor(height/scl);
     food = createVector(floor(random(cols)), floor(random(rows)));
     food.mult(scl);
+    
 }
 
 //trenger å fikse slik at når man bare har hodet så kan den gå bakover
 function keyPressed(){ 
+    
    if (keyCode === UP_ARROW && snakey.ySpeed === 1){ //tidliger retning ned
         snakey.movement(0, 1);
     } else if (keyCode === UP_ARROW && snakey.ySpeed != 1){ //tidligere retning ikke ned
@@ -87,6 +92,7 @@ function keyPressed(){
     } else if (keyCode === LEFT_ARROW && snakey.xSpeed != 1){
         //tidligere retning ikke til høyre
         snakey.movement(-1, 0);     
+        
     }
 }
 

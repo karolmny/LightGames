@@ -5,8 +5,10 @@ function Snake(){
     this.ySpeed = 0;
     this.total = 0;
     this.tail = [];
+   
     
     this.update = function(){
+
         
         for (var i = 0; i < this.tail.length -1; i++){
             this.tail[i] = this.tail[i+1];
@@ -30,10 +32,12 @@ function Snake(){
             this.y = 0;
         }
         
+        
 
     }
     
     this.show = function(){
+       
         fill("#a1f0ec");
         for (var i = 0; i < this.total; i++){
             stroke(0);
@@ -53,10 +57,12 @@ function Snake(){
         var dis = dist(this.x, this.y, pos.x, pos.y);
         if (dis < 1){
             this.total++;
+
             return true;
         } else {
             return false;
         }
+
     }
     
     this.endgame = function () {
@@ -64,11 +70,23 @@ function Snake(){
             var pos = this.tail[i];
             var dis = dist(this.x, this.y, pos.x, pos.y);
             if (dis < 1){
+                let score = this.total;
+                console.log(score);
                 this.total = 0;
                 this.tail = [];
+                this.movement(0,0);
+
+                console.log(playername + " your score is " + score);
+                sendData("Snake", playername, score)
+''
+    
                 
             }
+            
          
         }
     }
 }
+
+
+
