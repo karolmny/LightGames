@@ -102,9 +102,15 @@ function update ()
         gameState.platform.x += 0;
     }
     
+
     if (gameState.ball.y > gameState.platform.y){ //må sjekke om det er høyere siden den starter på 0
+        console.log("before game over")
         gameState.scoreText = this.add.text(ScreenWidth/2, ScreenHeight/2, "GAME OVER", { fontSize: '30px', fill: '#000000' });
+        console.log("i write this");
         gameState.ball.setCollideWorldBounds(false);
+        console.log("i can write this");
+        console.log(playername + " your score is " + gamestate.score);
+        sendData("juggle", playername, gamestate.score)
         
     }
     if (gameState.ball.x < ballSize){ //helt til venstre
