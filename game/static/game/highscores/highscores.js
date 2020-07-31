@@ -40,14 +40,15 @@ const display3 = document.getElementById("score3");
 const display4 = document.getElementById("score4");
 const display5 = document.getElementById("score5");
 
-const http = new XMLHttpRequest();
-const url = 'https://sheet2api.com/v1/HxiceVkT7C4B/high-scores2';
+const httpGET = new XMLHttpRequest();
+const httpPOST = new XMLHttpRequest();
+const url = 'https://sheet2api.com/v1/fw6NK6fOQNGA/high-scores';
 const defaultText = "Mangler highscore-data..";
 
-http.open("GET", url, true);
-http.send();
+httpGET.open("GET", url, true);
+httpGET.send();
 
-http.onreadystatechange = function() {
+httpGET.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
         const text = JSON.parse(this.responseText);
         
@@ -76,7 +77,7 @@ http.onreadystatechange = function() {
                 }
                 display4.innerHTML += "<li><b>" + text[i].name + "</b> --- " + text[i].score + "p</li>";
             }
-            else if (text[i].game == "Floppy fish") {
+            else if (text[i].game == "Floppy Fish") {
                 if (display5.innerHTML == defaultText) {
                     display5.innerHTML = "";
                 }
@@ -88,18 +89,18 @@ http.onreadystatechange = function() {
 
 // -----DUMMY DATA -------
 const data = JSON.stringify(
-    {"game": "Catch Cupcakes",
-    "name": "test",
-    "score": 100}
+    {"game": "Floppy Fish",
+    "name": "dory",
+    "score": 99}
 );
-/*
-http.onreadystatechange = function() {
-  if (http.readyState === XMLHttpRequest.DONE) {
-    return http.response;
+
+httpPOST.onreadystatechange = function() {
+  if (httpPOST.readyState === XMLHttpRequest.DONE) {
+    return httpPOST.response;
   }
 };
 
-http.open('POST', url, true);
-http.setRequestHeader("Content-Type", "application/json");
-http.send(data);
-*/
+
+httpPOST.open('POST', url, true);
+httpPOST.setRequestHeader("Content-Type", "application/json");
+httpPOST.send(data);
