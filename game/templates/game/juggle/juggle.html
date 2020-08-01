@@ -8,18 +8,22 @@
     <!--img src="{% static 'game/juggle/platform1.png' %}" alt="Eat game">
     <img src="{% static 'game/juggle/ball.png' %}" alt="Eat game" --->
     <script src="{%static 'game/sendData.js' %}" type=text/javascript></script>
+  <script src="https://cdn.jsdelivr.net/npm/phaser@3.16.2/dist/phaser.min.js"></script>
   <script>
     let ball = "{% static 'game/juggle/ball.png' %}";
     let plat = "{% static 'game/juggle/platform1.png' %}";
   </script>
-  <script src="https://cdn.jsdelivr.net/npm/phaser@3.16.2/dist/phaser.min.js"></script>
-  <script defer src="{%static 'game/juggle/juggle.js' %}" type=text/javascript>
-    let ball = "{% static 'game/juggle/assets/ball.png'% }";
-    let plat = "{% static 'game/juggle/assets/platform1.png'% }";
-  </script>
+  <script src="{%static 'game/juggle/StartScene.js' %}" type=text/javascript></script>
+  <script src="{%static 'game/juggle/GameScene.js' %}" type=text/javascript></script>
+  <script src="{%static 'game/juggle/endScene.js' %}" type=text/javascript></script>
+  <script src="{%static 'game/juggle/GameConfig.js' %}" type=text/javascript></script>
+  
 
 
-<div >
+
+
+
+<!---div >
             
   <h3>Trigger Button Click on Enter</h3>
   <p>Press the "Enter" key inside the input field to trigger the button.</p>
@@ -48,7 +52,7 @@
 
   
   </script>
-  </div>
+  </div --->
 {% endblock %}
 
 
