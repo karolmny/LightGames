@@ -1,10 +1,11 @@
 function Snake(){
     this.x = 0;
     this.y = 0;
-    this.xSpeed = 1;
+    this.xSpeed = 0;
     this.ySpeed = 0;
     this.total = 0;
     this.tail = [];
+    this.walls = false;
    
     
     this.update = function(){
@@ -18,9 +19,13 @@ function Snake(){
         
         this.x = this.x + this.xSpeed*scl;
         this.y = this.y + this.ySpeed*scl;
+
+        if (this.walls){
+            this.x = constrain(this.x, 0, width-scl);
+            this.y = constrain(this.y, 0 ,height -scl); //dette lager vegger
+        }
         
-        //this.x = constrain(this.x, 0, width-scl);
-        //this.y = constrain(this.y, 0 ,height -scl); //dette lager vegger
+        
         
         if (this.x === xCanvas){ 
             this.x = 0;
@@ -72,9 +77,11 @@ function Snake(){
             if (dis < 1){
                 let score = this.total;
                 console.log(score);
+                gameOn = false;
                 this.total = 0;
                 this.tail = [];
                 this.movement(0,0);
+                console.log("xSpeed: " +this.xSpeed + " ySpeed: " + this.ySpeed);
 
                 console.log(playername + " your score is " + score);
                 sendData("Snake", playername, score)

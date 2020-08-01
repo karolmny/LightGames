@@ -1,6 +1,7 @@
 
 var snakey; 
 var food; 
+gameOn = false;
 
 const xCanvas = 600;
 const yCanvas = 600;
@@ -12,11 +13,12 @@ const xStart = Math.round((Math.random()*Math.round(xCanvas/scl)));
 const yStart = Math.round((Math.random()*yCanvas));
 
 function setup() {
-    
+
     createCanvas(xCanvas, yCanvas).parent("gameDisplay");   // Spillet plasseres inni gameDisplay-div i HTML
     snakey = new Snake();
     pickLocation();
     frameRate(8);
+    
     
 }
 
@@ -26,7 +28,6 @@ function CreateBackground() {
         for (var y = 0; y < yCanvas; y += scl){
             strokeWeight(0)
             if (i%2 > 0){
-                fill("#9bba5a");
                 fill("#b0d466");  
                 rect(x, y, scl, scl);
             } else {
@@ -46,16 +47,20 @@ function draw(){
     
     background("#9bba5a");
     CreateBackground();
-    snakey.endgame();
-    snakey.update();
-    snakey.show();
-
     
-    if (snakey.eat(food)){
-        pickLocation();
-    }
-    fill("#ff0800");
-    rect(food.x, food.y,scl, scl, 17, 17, 8, 8);  
+        
+        snakey.endgame();
+        snakey.update();
+        snakey.show();
+    
+        
+        if (snakey.eat(food)){
+            pickLocation();
+        }
+        fill("#ff0800");
+        rect(food.x, food.y,scl, scl, 17, 17, 8, 8); 
+    
+   
     
     
     // Draw a rectangle with rounded corners having the following radii:
@@ -74,7 +79,7 @@ function pickLocation(){
 
 //trenger å fikse slik at når man bare har hodet så kan den gå bakover
 function keyPressed(){ 
-    
+   if (gameOn){
    if (keyCode === UP_ARROW && snakey.ySpeed === 1){ //tidliger retning ned
         snakey.movement(0, 1);
     } else if (keyCode === UP_ARROW && snakey.ySpeed != 1){ //tidligere retning ikke ned
@@ -93,6 +98,7 @@ function keyPressed(){
         //tidligere retning ikke til høyre
         snakey.movement(-1, 0);     
         
+    }
     }
 }
 
