@@ -12,6 +12,70 @@
 
 
 {% block body %}
+<div >
+            
+    <h3>Trigger Button Click on Enter</h3>
+    <p>Press the "Enter" key inside the input field to trigger the button.</p>
+    <p> Tekst om hvordan man spiller</p>
+
+   
+
+    <form id="nameform">
+        name: <input name="name" type="text" placeholder="name" >
+    </form>
+    <button id="namebtn" onclick="outputName()">Save name</button>
+    <button id="startbtn" onclick="startGame()">Start game</button>
+
+    
+      <p>Do you want to pass through walls? </p>
+        <button id="yes" onclick="setWalls()">No</button>
+        <button id="no" onclick="noWalls()">Yes</button>
+        
+    <script>
+    
+    var playerform= document.getElementById("nameform");
+    var playername = playerform.elements["name"].value;
+
+    function outputName(){
+        
+        //var playerform= document.getElementById("nameform");
+        playername = playerform.elements["name"].value;
+        console.log(playername);
+       
+
+    }
+    let gameOn = false;
+
+    function startGame() {
+        console.log("gameOn is " + gameOn);
+        gameOn = true;
+        console.log("Name is " + playername +  " and gameOn is " + gameOn);
+        snakey.movement(1, 0);
+        console.log("snakey.pos: " + snakey.x + " snakey.ypos: " + snakey.y)
+    }
+
+    function setWalls() {
+        snakey.walls = true;
+    }
+
+    function noWalls(){
+        snakey.walls = false;
+    }
+    
+    
+    </script>
+    </div>
+    <script src="{%static 'game/sendData.js' %}" type=text/javascript></script>
     <script src="{%static 'game/snake/snake.js' %}" type=text/javascript></script>
-    <script src="{%static 'game/snake/snakeClass.js' %}" type="text/javascript"></script>
+    <script src="{%static 'game/snake/snakeClass.js' %}" type=text/javascript></script>
+    
+
+
+    
+
+
+        
+        
+       
 {% endblock %}
+

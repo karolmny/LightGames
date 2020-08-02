@@ -26,8 +26,15 @@
         
         <h1>{% block header %} LightGames.no {% endblock %}</h1>
         <div id="gameDisplay">
-            {% block body %}
+            {% block addName %}
+            <div id='username'>
+                <label>Skriv inn navnet ditt:</label>
+                <input type='text' id='name'>
+                <button>Klikk på meg</button>
+            </div>
+            {% endblock %}
 
+            {% block body %}
             {% endblock %}
         </div>
 

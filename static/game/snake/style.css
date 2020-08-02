@@ -10,3 +10,12 @@ canvas {
   margin-right: auto;
   width: 800px;
 }
+
+.name{
+  display: block;
+  padding-left: auto;
+  padding-right: auto;
+  margin-left: auto;
+  margin-right: auto;
+  width: 800px;
+}
