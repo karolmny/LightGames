@@ -23,7 +23,7 @@ class StartScene extends Phaser.Scene {
         const textStyle = {fill: '#000000', fontSize: '25px'};
         this.add.text(100, 100, 'Welcome!', { fill: '#000000', fontSize: '35px' });
         this.add.text(100, 150, 'Try to eat as many stars as fast as possible. \nMove by using the left (<-) and right (->) keys.', textStyle);
-        //this.add.text(100, 230, 'Click to start the game.', textStyle).setFontStyle('bold');
+        this.add.text(100, 200, 'Please add name, if you want to join the scoreboard.', textStyle);
         
         this.time.addEvent({
             delay: 1000,
@@ -40,7 +40,7 @@ class StartScene extends Phaser.Scene {
     }
 
     fadeText() {
-        let blinkingText = this.add.text(100, 230, 'Click to start the game.', {fill: '#000000', fontSize: '25px'}).setFontStyle('bold');
+        let blinkingText = this.add.text(100, 280, 'Click to start the game.', {fill: '#000000', fontSize: '25px'}).setFontStyle('bold');
         this.tweens.add({
             targets: blinkingText,
             alpha: 0,

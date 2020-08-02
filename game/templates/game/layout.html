@@ -24,14 +24,16 @@
             <a href="{% url 'game:aboutUs' %}" class="nav-button"><b>About</b></a>
         </nav>
         
-        <h1>{% block header %} LightGames.no {% endblock %}</h1>
+        <h1 id="gameName">{% block header %} LightGames.no {% endblock %}</h1>
         <div id="gameDisplay">
             {% block addName %}
             <div id='username'>
                 <label>Skriv inn navnet ditt:</label>
                 <input type='text' id='name'>
-                <button>Klikk på meg</button>
+                <button id="btn">Registrer</button>
             </div>
+            
+            <script src="{%static 'game/highscores/score.js' %}"></script>
             {% endblock %}
 
             {% block body %}

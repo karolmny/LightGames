@@ -7,7 +7,8 @@ class GameScene extends Phaser.Scene {
     //Variabler
     score1 = 0;
     score2 = 0;
-    timer = 3*1000;
+    //timer = 3*1000;
+    timer = 2*100;
 
     scoreText1;
     scoreText2;
@@ -111,7 +112,6 @@ class GameScene extends Phaser.Scene {
                     this.timer=3*1000;
                     this.scene.restart();
                     });
-
             }
 
         else if (this.physics.overlap(gameState.player1, gameState.food) || this.physics.overlap(gameState.player2, gameState.food)) {

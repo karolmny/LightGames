@@ -4,19 +4,14 @@ const display3 = document.getElementById("score3");
 const display4 = document.getElementById("score4");
 const display5 = document.getElementById("score5");
 
+//  KOMMENTERT UT FOR Å IKKE "MISBRUKE" REQUESTS
 const httpPOST = new XMLHttpRequest();
 const httpGET = new XMLHttpRequest();
 const url = 'https://sheet2api.com/v1/fw6NK6fOQNGA/high-scores';
 const defaultText = "Mangler highscore-data..";
 
-
-// -----DUMMY DATA -------
-const data = JSON.stringify(
-    {"game": "Floppy Fish",
-    "name": "dory",
-    "score": 99}
-);
-
+/*
+// ------ POST-request -------- (utføres i score.js)
 httpPOST.onreadystatechange = function() {
   if (httpPOST.readyState === XMLHttpRequest.DONE) {
     return httpPOST.response;
@@ -26,8 +21,10 @@ httpPOST.onreadystatechange = function() {
 httpPOST.open('POST', url, true);
 httpPOST.setRequestHeader("Content-Type", "application/json");
 httpPOST.send(data);
+*/
 
-
+/*
+// ------ GET-request --------
 httpGET.open("GET", url, true);
 httpGET.send();
 
@@ -69,3 +66,4 @@ httpGET.onreadystatechange = function() {
         }
     }
 }
+*/
