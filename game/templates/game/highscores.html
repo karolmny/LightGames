@@ -5,8 +5,11 @@
     <link rel="stylesheet" type="text/css" href="{% static 'game/highscores/highscores.css' %}">
 {% endblock %}
 
-{% block title %} High scores {% endblock %}
-{% block header %} High scores {% endblock %}
+{% block title %} Scoreboard {% endblock %}
+{% block header %} Scoreboard {% endblock %}
+
+{% block addName %}
+{% endblock %}
 
 {% block body %}
     <div class="container">
@@ -18,7 +21,7 @@
             </div>
             <div class="scoreGame">
                 <h2>Snake</h2>
-                <ol id="score1">Mangler highscore-data..</ol>
+                <ul id="score1">Mangler highscore-data..</ul>
             </div>
         </div>
         
@@ -30,7 +33,7 @@
             </div>
             <div class="scoreGame">
                 <h2>Eat the stars</h2>
-                <ol id="score2">Mangler highscore-data..</ol>
+                <ul id="score2">Mangler highscore-data..</ul>
             </div>
         </div>  
 
@@ -42,7 +45,7 @@
             </div>
             <div class="scoreGame">
                 <h2>Catch cupcakes</h2>
-                <ol id="score3">Mangler highscore-data..</ol>
+                <ul id="score3">Mangler highscore-data..</ul>
             </div>
         </div>  
 
@@ -54,7 +57,7 @@
             </div>
             <div class="scoreGame">
                 <h2>Juggle</h2>
-                <ol id="score4">Mangler highscore-data..</ol>
+                <ul id="score4">Mangler highscore-data..</ul>
             </div>
         </div>  
 
@@ -66,7 +69,7 @@
             </div>
             <div class="scoreGame">
                 <h2>Floppy fish</h2>
-                <ol id="score5">Mangler highscore-data..</ol>
+                <ul id="score5">Mangler highscore-data..</ul>
             </div>
         </div>  
     </div>
