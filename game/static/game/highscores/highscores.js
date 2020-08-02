@@ -66,4 +66,3 @@ httpGET.onreadystatechange = function() {
         }
     }
 }
-*/
