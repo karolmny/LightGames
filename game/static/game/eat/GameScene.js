@@ -56,9 +56,8 @@ class GameScene extends Phaser.Scene {
     
         for (let i=0; i<this.monsters.length; i++) {
             if (this.physics.overlap(gameState.player, this.monsters[i])) {
-                console.log(this.monsters[i].x);
-                console.log(this.monsters[i].y);
-                console.log("eaten");
+                //console.log(this.monsters[i].x);
+                //console.log(this.monsters[i].y);
 
                 gameState.blood = this.physics.add.image(this.monsters[i].x, this.monsters[i].y, 'blood').setScale(0.35);
                 
@@ -82,12 +81,14 @@ class GameScene extends Phaser.Scene {
         
 
         /* Reset the scene during the game */
+        /*
         this.input.on('pointerup', () => {
             console.log('reset');
             this.scene.restart();
         });
+        */
 
-        console.log('testing');
+        //console.log('testing');
     }
     
 
@@ -138,9 +139,10 @@ class GameScene extends Phaser.Scene {
     stopGame() {
         console.log('stop');
         this.scene.pause();
-        //this.timer = gameState.secs;
-        //this.score = gameState.score;
-        //this.scene.restart();
-        //this.scene.start('endScene');
+
+        /* High score-data */
+        const name = document.getElementById('name');
+        const gameName = document.getElementById('gameName');
+        getScore(gameName.innerHTML, name.value, this.score);
     }
 }

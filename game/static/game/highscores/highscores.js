@@ -1,52 +1,30 @@
-/*
-const testdata = [
-    {
-        "game": "Snake",
-        "name": "test",
-        "score": 100
-    },
-	{
-        "game": "Catch Cupcakes",
-   	    "name": "roooyce",
-        "score": 80
-    },  
-    {
-        "game": "Catch Cupcakes",
-   	    "name": "roooyceTest",
-           "score": 40
-    },
-    {
-        "game": "Snake",
-   	    "name": "bossy",
-        "score": 80
-    },
-    {
-        "game": "Catch Cupcakes",
-   	    "name": "peeyy",
-        "score": 60
-    },
-    {
-        "game": "Snake",
-        "name": "wihuuu",
-        "score": 100
-    }     
-];
-
-const text = testdata;
-*/
-
-/*
 const display1 = document.getElementById("score1");
 const display2 = document.getElementById("score2");
 const display3 = document.getElementById("score3");
 const display4 = document.getElementById("score4");
 const display5 = document.getElementById("score5");
 
-const httpGET = new XMLHttpRequest();
+//  KOMMENTERT UT FOR Å IKKE "MISBRUKE" REQUESTS
 const httpPOST = new XMLHttpRequest();
+const httpGET = new XMLHttpRequest();
 const url = 'https://sheet2api.com/v1/fw6NK6fOQNGA/high-scores';
 const defaultText = "Mangler highscore-data..";
 
+/*
+// ------ POST-request -------- (utføres i score.js)
+httpPOST.onreadystatechange = function() {
+  if (httpPOST.readyState === XMLHttpRequest.DONE) {
+    return httpPOST.response;
+  }
+};
+
+httpPOST.open('POST', url, true);
+httpPOST.setRequestHeader("Content-Type", "application/json");
+httpPOST.send(data);
+*/
+
+/*
+// ------ GET-request --------
 httpGET.open("GET", url, true);
 httpGET.send();
 
@@ -88,23 +66,3 @@ httpGET.onreadystatechange = function() {
         }
     }
 }
-
-// -----DUMMY DATA -------
-const data = JSON.stringify(
-    {"game": "Floppy Fish",
-    "name": "dory",
-    "score": 99}
-);
-
-httpPOST.onreadystatechange = function() {
-  if (httpPOST.readyState === XMLHttpRequest.DONE) {
-    return httpPOST.response;
-  }
-};
-
-
-httpPOST.open('POST', url, true);
-httpPOST.setRequestHeader("Content-Type", "application/json");
-httpPOST.send(data);
-
-*/

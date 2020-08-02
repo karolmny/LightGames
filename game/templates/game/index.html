@@ -22,31 +22,37 @@
             padding: 10px;*/
             margin: auto; max-width: 300px;
         }
+        
+        h3 {
+            margin: 0 auto;
+        }
     </style>
 {% endblock %}
 
 {% block title %} Home {% endblock %}
+{% block addName %} {% endblock %}
 
 {% block addName %}
 
 {% endblock %}
 
 {% block body %}
-   <p>Hei dette funker ?</p>
-
    <table class="center" cellspacing="0" cellpadding="0">
        <tr>
            <th>
+            <h3>Eat the stars</h3>
             <a href="{% url 'game:eat' %}">
                 <img src="{% static 'game/eat/eat.png' %}" alt="Eat game">
             </a>
            </th>
            <th>
+            <h3>Catch Cupcakes</h3>
             <a href="{% url 'game:catchCupcakes' %}">
                 <img src="{% static 'game/catchCupCakes/catchCupcakes.PNG' %}" alt="catchCupCake">
             </a>
            </th>
            <th>
+                <h3>Snake</h3>
                 <a href="{% url 'game:snake' %}">
                 <img src="{% static 'game/snake/snake.png' %}" alt="snake">
                 </a>
@@ -54,11 +60,13 @@
        </tr>
        <tr>
            <th>
+               <h3>Juggle</h3>
                 <a href="{% url 'game:juggle' %}">
                 <img src="{% static 'game/juggle/juggle.png' %}" alt="juggle">
             </a>
            </th>
            <th>
+               <h3>Floppy Fish</h3>
             <a href="{% url 'game:floppyFish' %}">
                 <img src="{% static 'game/floppyFish/flappyfish.png' %}" alt="flappyfish">
             </a>

@@ -111,7 +111,6 @@ class GameScene extends Phaser.Scene {
                     this.timer=3*1000;
                     this.scene.restart();
                     });
-
             }
 
         else if (this.physics.overlap(gameState.player1, gameState.food) || this.physics.overlap(gameState.player2, gameState.food)) {

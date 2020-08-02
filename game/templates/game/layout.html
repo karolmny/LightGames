@@ -20,18 +20,20 @@
             <a href="{% url 'game:catchCupcakes' %}" class="nav-button">CatchCupcakes</a>
             <a href="{% url 'game:floppyFish' %}" class="nav-button">FlappyFish</a>
             <a href="{% url 'game:snake' %}" class="nav-button">Snake</a>
-            <a href="{% url 'game:highscores' %}" class="nav-button"><b>High scores</b></a>
+            <a href="{% url 'game:highscores' %}" class="nav-button"><b>Scoreboard</b></a>
             <a href="{% url 'game:aboutUs' %}" class="nav-button"><b>About</b></a>
         </nav>
         
-        <h1>{% block header %} LightGames.no {% endblock %}</h1>
+        <h1 id="gameName">{% block header %} LightGames.no {% endblock %}</h1>
         <div id="gameDisplay">
             {% block addName %}
             <div id='username'>
                 <label>Skriv inn navnet ditt:</label>
                 <input type='text' id='name'>
-                <button onClick="">Klikk på meg</button>
+                <button id="btn">Registrer</button>
             </div>
+            
+            <script src="{%static 'game/highscores/score.js' %}"></script>
             {% endblock %}
 
             {% block body %}
@@ -47,9 +49,7 @@
                 <img type="netlight" src="{% static 'game/aboutUs/netlight.png' %}">
             </a>
 
-            <p>
-             Laget av <a href="{% url 'game:aboutUs' %}"  target="_blank">Rose Lu, Royce Lu og Karoline Nylænder </a>
-            </p>
+            <p>Laget av Rose Lu, Royce Lu og Karoline Nylænder</p>
         </footer>
     </body>
 </html>
