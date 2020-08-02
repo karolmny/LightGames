@@ -7,8 +7,7 @@ class GameScene extends Phaser.Scene {
     //Variabler
     score1 = 0;
     score2 = 0;
-    //timer = 3*1000;
-    timer = 2*100;
+    timer = 3*1000;
 
     scoreText1;
     scoreText2;
