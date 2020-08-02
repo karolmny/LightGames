@@ -34,6 +34,8 @@ const testdata = [
 
 const text = testdata;
 */
+
+/*
 const display1 = document.getElementById("score1");
 const display2 = document.getElementById("score2");
 const display3 = document.getElementById("score3");
@@ -104,3 +106,5 @@ httpPOST.onreadystatechange = function() {
 httpPOST.open('POST', url, true);
 httpPOST.setRequestHeader("Content-Type", "application/json");
 httpPOST.send(data);
+
+*/
