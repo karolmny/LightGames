@@ -18,10 +18,11 @@ class GameScene extends Phaser.Scene {
 
      create() {
          score = 0;
+         gameState.scoreText = this.add.text(ScreenWidth/2 - 110,ScreenHeight/2-150, score, { fill: '#FFFFFF', fontSize: '300px', setFontStyle: "Bernard MT" });
 
         gameState.state = false;
 
-        gameState.pipes= this.physics.add.group({
+        gameState.pipes = this.physics.add.group({
             //immovable: true,
             allowGravity: false
           });
@@ -34,12 +35,13 @@ class GameScene extends Phaser.Scene {
         this.physics.pause();
         const platforms = this.physics.add.staticGroup();
       
-        const platPosition = [ {x: 226, y: 630}, {x: 676, y: 630}, {x: 1126, y: 630} ];
+        const platPosition = [ {x: 226, y: 630}, {x: 676, y: 630}, {x: 1126, y: 630}];
         platPosition.forEach(plat => {
           platforms.create(plat.x, plat.y, "platform");
         }) 
 
-        var wall = this.physics.add.sprite(0, 0, "platform")
+       
+      
 
         
 
@@ -60,8 +62,12 @@ class GameScene extends Phaser.Scene {
                 gameState.pipes.create(StartX, top, 'pipet');
                 gameState.pipes.create(StartX, bottom, 'pipeb');
                 gameState.pipes.setVelocityX(-200);
+                
 
         }
+
+        
+
         genPipe(ScreenWidth-300, Math.random()* (375) -175);
         genPipe(ScreenWidth-600, -120);
         
@@ -72,29 +78,27 @@ class GameScene extends Phaser.Scene {
             textint.destroy();
             starttext.destroy();
             gameState.state = true;
-            
-            
-            
 
         });
 
+
+        const pipes = () => {
+          
+        }
         
 
         
 
         console.log("score: " + score)
-
+        
         //gameState.scoreText = this.add.text(16, 16, 'Score: ' + score, { fontSize: '15px', fill: '#FFFFFF' })
         gameState.fish = this.physics.add.sprite(screen.width*0.125,screen.height*0.35, "fishy").setScale(.10);
         
          
-        gameState.scoreText = this.add.text(ScreenWidth/2,ScreenHeight/2, score, { fill: '#FFFFFF', fontSize: '150px', setFontStyle: "Bauhaus 93" });
+        
         
         
       
-         //gameState.fishTest = this.physics.add.sprite(0,200, "pipet")
-         //gameState.fishTest.setGravity(0);
-         
          
 
         const generatePipes = () =>{
@@ -114,8 +118,15 @@ class GameScene extends Phaser.Scene {
                 gameState.pipes.create(StartX, top, 'pipet');
                 gameState.pipes.create(StartX, bottom, 'pipeb');
                 gameState.pipes.setVelocityX(-200);
+                score++;
+                gameState.scoreText.setText(`${score}`)
             
         }}
+
+        const testfunct = () =>{
+       
+
+        }
       
       
         const pipeGenLoop = this.time.addEvent({
@@ -127,12 +138,7 @@ class GameScene extends Phaser.Scene {
         })  
         
       
-        //gameState.scoreText = this.add.text(195, 485, 'Score: 0', { fontSize: '15px', fill: '#000000' });
-        /*this.physics.add.collider(gameState.pipes, gameState.wall, () => {
-            gameState.score++;
-            gameState.scoreText.setText(`${gameState.score}`)
-        }*/
-
+        
 
         this.physics.add.collider(gameState.pipes, gameState.fish, () =>{
           pipeGenLoop.destroy();
@@ -155,17 +161,28 @@ class GameScene extends Phaser.Scene {
 
             
         });
-
           
         });
         
+        
+        
+
+       
+        
+      
+        
+        
+        
         gameState.fish.setCollideWorldBounds(true);
         
-        this.physics.add.collider(gameState.fish, platforms);
+        this.physics.add.collider(gameState.fish, platforms, () =>{
+          console.log("bird down")
+        });
       
       
       
         gameState.cursors = this.input.keyboard.createCursorKeys();
+        
       }
 
 
@@ -177,16 +194,7 @@ class GameScene extends Phaser.Scene {
             //gameState.fish.y += 5;
             gameState.fish.setVelocityY(-150);
           
-          }/*else if (gameState.cursors.up.isDown) {
-          gameState.fishTest.y -= 5;
-          } else if (gameState.cursors.down.isDown) {
-          gameState.fishTest.y += 5; 
-        } */
-        //pipes.x += 1;
-        //pipes.setVelocityY(100);
-        //gameState.pipes.setVelocityY(100);
-        //gameState.fishTest.setVelocityY(110);
-        
+          }
         
     
       
@@ -194,7 +202,7 @@ class GameScene extends Phaser.Scene {
       }
 
       fadeText(){
-        let blinkingText = this.add.text(100, 230, 'Click to start the game.', {fill: '#000000', fontSize: '25px'}).setFontStyle('bold');
+        let blinkingText = this.add.text(100, 230, 'Click to restart the game.', {fill: '#000000', fontSize: '25px'}).setFontStyle('bold');
         this.tweens.add({
             targets: blinkingText,
             alpha: 0,
@@ -206,4 +214,9 @@ class GameScene extends Phaser.Scene {
 
       
 
+      
+
+      
+
 }
+
