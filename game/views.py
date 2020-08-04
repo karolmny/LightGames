@@ -19,6 +19,9 @@ def floppyFish(request):
 def juggle(request):
     return render(request, "game/juggle/juggle.html")
 
+def fly(request):
+    return render(request, "game/fly/fly.html")
+
 
 #Nettsiden
 def aboutUs(request):

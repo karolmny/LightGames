@@ -10,6 +10,7 @@ urlpatterns = [
     path("catchCupcakes/", views.catchCupcakes, name="catchCupcakes"),
     path("floppyFish/", views.floppyFish, name="floppyFish"),
     path("juggle/", views.juggle, name="juggle"),
+    path("fly/", views.fly, name="fly"),
 
     #Nettsiden
     path("aboutUs/", views.aboutUs, name="aboutUs"),
