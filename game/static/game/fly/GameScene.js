@@ -14,7 +14,7 @@ class GameScene extends Phaser.Scene {
      }
 
      create() {
-         score = 0;
+         gameState.speed = 5;
          //gameState.scoreText = this.add.text(ScreenWidth/2 - 110,ScreenHeight/2-150, score, { fill: '#FFFFFF', fontSize: '300px', setFontStyle: "Bernard MT" });
 
         gameState.state = false;
@@ -38,6 +38,7 @@ class GameScene extends Phaser.Scene {
         });
 
         gameState.plane = this.physics.add.sprite(screen.width*0.125,screen.height*0.35, "plane").setScale(.10);
+        //gameState.plane.angle = 90;
         
          
         const power = this.physics.add.group();
@@ -46,6 +47,7 @@ class GameScene extends Phaser.Scene {
             const xCoord = Math.random() * ScreenWidth;
             const yCoord = Math.random() * ScreenHeight;
             power.create(xCoord, yCoord, 'energy').setScale(0.07);
+            
         }
         
         const powerGenLoop = this.time.addEvent({
@@ -85,9 +87,14 @@ class GameScene extends Phaser.Scene {
           
         });*/
         
-        
-        
+        this.physics.add.collider(gameState.plane, power, function(pow, eng) {
+            //pow.destroy();
+            eng.destroy();
+            gameState.speed++;
+          });
 
+
+        
        
         
       
@@ -101,24 +108,43 @@ class GameScene extends Phaser.Scene {
       
       
         gameState.cursors = this.input.keyboard.createCursorKeys();
+
+        
         
       }
 
 
      update() {
         
-      
-        
-        if (gameState.cursors.up.isDown){
-            gameState.plane.setScale(-0.1)
-            this.setMovemnetY(-5);
+        if (gameState.cursors.right.isDown && gameState.cursors.down.isDown){
+            this.setMovemnetX(gameState.speed );
+            this.setMovemnetY(gameState.speed );
+            gameState.plane.angle = 45;
+        } else if (gameState.cursors.right.isDown && gameState.cursors.up.isDown){
+            this.setMovemnetX(gameState.speed );
+            this.setMovemnetY(-gameState.speed );
+            gameState.plane.angle = -45;
+        } else if ( gameState.cursors.left.isDown && gameState.cursors.down.isDown){
+            this.setMovemnetX(-gameState.speed );
+            this.setMovemnetY(gameState.speed );
+            gameState.plane.angle = 135;
+        } else if (gameState.cursors.left.isDown && gameState.cursors.up.isDown){
+            this.setMovemnetX(-gameState.speed );
+            this.setMovemnetY(-gameState.speed );
+            gameState.plane.angle = -135;
+        } else if (gameState.cursors.up.isDown){
+            gameState.plane.angle = -90;
+            this.setMovemnetY(-gameState.speed );
         } else if (gameState.cursors.down.isDown){
-            this.setMovemnetY(5);
+            gameState.plane.angle = 90;
+            this.setMovemnetY(gameState.speed );
         } else if (gameState.cursors.left.isDown){
-            this.setMovemnetX(-5);
+            gameState.plane.angle = -180;
+            this.setMovemnetX(-gameState.speed );
         } else if (gameState.cursors.right.isDown){
-            this.setMovemnetX(5);
-        }
+            gameState.plane.angle = 0;
+            this.setMovemnetX(gameState.speed );
+        } 
 
       
           

@@ -17,11 +17,13 @@ class GameScene extends Phaser.Scene {
 
     create ()
 {
+    gameState.speed =300;
     
     gameState.scoreText = this.add.text(16, 16, 'Score: 0', { fontSize: '15px', fill: '#000000' })
-    const StartX = (Math.random()*0.85 + 0.15)*ScreenHeight;
-    const StartY = (Math.random()*0.5 + 0.15)*ScreenWidth;
-    gameState.ball = this.physics.add.sprite(StartX, ScreenHeight*0.5, "ball").setScale(0.10);
+    //const StartX = (Math.random()*0.85 + 0.15)*ScreenHeight;
+    //const StartY = (Math.random()*0.5 + 0.15)*ScreenWidth;
+    gameState.ball = this.physics.add.sprite(ScreenWidth*0.45, ScreenHeight*0.5, "ball").setScale(0.10);
+    gameState.ball.setVelocityY(gameState.speed);
     gameState.ballSize = 30;
     //gameState.test = this.add.sprite(29, 29, "ball").setScale(0.10);
     this.tweens.add({  //Ønsker å få ballen til å rotere og ikke bare "vugge"
@@ -30,9 +32,11 @@ class GameScene extends Phaser.Scene {
         angle: 90,
         yoyo: true,
         repeat: -1,
-        ease: 'Sine.easeInOut' //ender her
+        //ease: 'Sine.easeInOut' //ender her
 
     });
+
+    gameState.ball.angle = 0;
 
     gameState.platform = this.physics.add.sprite(ScreenHeight*0.75, ScreenHeight*0.75, "platform").setScale(0.33);
     gameState.platform.body.allowGravity = false;
@@ -47,7 +51,9 @@ class GameScene extends Phaser.Scene {
 
     
     this.physics.add.collider(gameState.ball, gameState.platform, () =>{
-        gameState.score += 1;
+        gameState.speed += 25;
+        console.log(gameState.speed);
+        gameState.score +=1;
         gameState.scoreText.setText(`Score: ${gameState.score}`);
         
         gameState.ball.setVelocityY(-300);
@@ -71,9 +77,9 @@ class GameScene extends Phaser.Scene {
 
     update() {
         if (gameState.cursors.left.isDown && !gameState.cursors.right.isDown){
-            gameState.platform.x -= 5;
+            gameState.platform.x -= 10;
         } else if (gameState.cursors.right.isDown && !gameState.cursors.left.isDown) {
-            gameState.platform.x += 5;
+            gameState.platform.x += 10;
         } else if (gameState.cursors.space.isDown) {
             console.log("begge er nede");
             gameState.platform.x += 0;
@@ -97,14 +103,16 @@ class GameScene extends Phaser.Scene {
             
         }
         if (gameState.ball.x < ballSize){ //helt til venstre
-            gameState.ball.setVelocityX(300);
+            gameState.ball.setVelocityX(gameState.speed);
         }
         if (gameState.ball.x > ScreenWidth - ballSize){ //helt til venstre
-            gameState.ball.setVelocityX(-300);
+            gameState.ball.setVelocityX(-gameState.speed);
         }
         if (gameState.ball.y < ballSize){
-            gameState.ball.setVelocityY(90);
+            gameState.ball.setVelocityY(gameState.speed);
         }
+
+        //gameState.ball.angle +=1;
     }
 
 }

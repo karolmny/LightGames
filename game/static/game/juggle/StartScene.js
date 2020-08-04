@@ -12,7 +12,7 @@ class StartScene extends Phaser.Scene {
         gameState.scoreText = this.add.text(16, 16, 'Score: 0', { fontSize: '15px', fill: '#000000' })
         const StartX = (Math.random()*0.85 + 0.15)*ScreenHeight;
         const StartY = (Math.random()*0.5 + 0.15)*ScreenWidth;
-        gameState.ball = this.add.sprite(StartX, ScreenHeight*0.5, "ball").setScale(0.10);
+        gameState.ball = this.add.sprite(ScreenWidth*0.45, ScreenHeight*0.5, "ball").setScale(0.10);
             
         gameState.platform = this.physics.add.sprite(ScreenHeight*0.75, ScreenHeight*0.75, "platform").setScale(0.33);
         gameState.platform.body.allowGravity = false;
