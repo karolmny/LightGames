@@ -3,6 +3,7 @@ const display2 = document.getElementById("score2");
 const display3 = document.getElementById("score3");
 const display4 = document.getElementById("score4");
 const display5 = document.getElementById("score5");
+const display6 = document.getElementById("score6");
 
 //  KOMMENTERT UT FOR Å IKKE "MISBRUKE" REQUESTS
 const httpPOST = new XMLHttpRequest();
@@ -23,7 +24,7 @@ httpPOST.setRequestHeader("Content-Type", "application/json");
 httpPOST.send(data);
 */
 
-/*
+
 // ------ GET-request --------
 httpGET.open("GET", url, true);
 httpGET.send();
@@ -62,6 +63,12 @@ httpGET.onreadystatechange = function() {
                     display5.innerHTML = "";
                 }
                 display5.innerHTML += "<li><b>" + text[i].name + "</b> --- " + text[i].score + "p</li>";
+            }
+            else if (text[i].game == "Fly") {
+                if (display6.innerHTML == defaultText) {
+                    display6.innerHTML = "";
+                }
+                display6.innerHTML += "<li><b>" + text[i].name + "</b> --- " + text[i].score + "p</li>";
             }
         }
     }

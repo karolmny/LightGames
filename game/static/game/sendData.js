@@ -1,6 +1,3 @@
-
-
-
 function sendData(game, name, score){
     console.log("i came here");
 

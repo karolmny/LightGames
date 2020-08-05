@@ -1,7 +1,7 @@
-const gameState = { score: 0, secs: 5 };
+const gameState = { score: 0, secs: 10 };
 
-const screenWidth = screen.width*0.8;
-const screenHeight = screen.height*0.6;
+const screenWidth = 900;
+const screenHeight = 500;
 
 const config = {
     type: Phaser.AUTO,
