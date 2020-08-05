@@ -18,7 +18,7 @@ class GameScene extends Phaser.Scene {
 
      create() {
          score = 0;
-         gameState.scoreText = this.add.text(ScreenWidth/2 - 110,ScreenHeight/2-150, score, { fill: '#FFFFFF', fontSize: '300px', setFontStyle: "Bernard MT" });
+         gameState.scoreText = this.add.text(ScreenWidth/2 - 110,ScreenHeight/2-75, score, { fill: '#FFFFFF', fontSize: '300px', setFontStyle: "Bernard MT" });
 
         gameState.state = false;
 

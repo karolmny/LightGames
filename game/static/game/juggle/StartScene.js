@@ -39,7 +39,10 @@ class StartScene extends Phaser.Scene {
             console.log("Clicked");
             this.scene.stop('StartScene');
             this.scene.start('GameScene');
+            
         });
+
+        
 
     }
 
