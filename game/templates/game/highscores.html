@@ -72,7 +72,21 @@
                 <ul id="score5">Mangler highscore-data..</ul>
             </div>
         </div> 
+
+        <div class="item">
+            <div class="picGame">
+                <a href="{% url 'game:fly' %}">
+                    <img src="{% static 'game/fly/FLY.png' %}" alt="fly">
+                </a>
+            </div>
+            <div class="scoreGame">
+                <h2>Floppy Fish</h2>
+                <ul id="score6">Mangler highscore-data..</ul>
+            </div>
+        </div> 
     </div>
 
     <script src="{% static 'game/highscores/highscores.js' %}"></script>
 {% endblock %}
+
+
