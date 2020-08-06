@@ -14,17 +14,12 @@
 {% block body %}
 <div >
             
-    <h3>Trigger Button Click on Enter</h3>
-    <p>Press the "Enter" key inside the input field to trigger the button.</p>
-    <p> Tekst om hvordan man spiller</p>
+   
 
    
 
-    <form id="nameform">
-        name: <input name="name" type="text" placeholder="name" >
-    </form>
-    <button id="namebtn" onclick="outputName()">Save name</button>
-    <button id="startbtn" onclick="startGame()">Start game</button>
+    
+   
 
     
       <p>Do you want to pass through walls? </p>
@@ -33,17 +28,8 @@
         
     <script>
     
-    var playerform= document.getElementById("nameform");
-    var playername = playerform.elements["name"].value;
+    
 
-    function outputName(){
-        
-        //var playerform= document.getElementById("nameform");
-        playername = playerform.elements["name"].value;
-        console.log(playername);
-       
-
-    }
     let gameOn = false;
 
     function startGame() {
@@ -56,10 +42,12 @@
 
     function setWalls() {
         snakey.walls = true;
+        startGame();
     }
 
     function noWalls(){
         snakey.walls = false;
+        startGame();
     }
     
     

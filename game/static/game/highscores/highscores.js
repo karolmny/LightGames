@@ -8,7 +8,7 @@ const display6 = document.getElementById("score6");
 //  KOMMENTERT UT FOR Å IKKE "MISBRUKE" REQUESTS
 const httpPOST = new XMLHttpRequest();
 const httpGET = new XMLHttpRequest();
-const url = 'https://sheet2api.com/v1/fw6NK6fOQNGA/high-scores';
+const url = 'https://sheet2api.com/v1/ZSJQLefxRcO8/highscores';
 const defaultText = "Mangler highscore-data..";
 
 /*

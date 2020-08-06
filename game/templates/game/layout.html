@@ -24,16 +24,30 @@
             <a href="{% url 'game:highscores' %}" class="nav-button"><b>Scoreboard</b></a>
             <a href="{% url 'game:aboutUs' %}" class="nav-button"><b>About</b></a>
         </nav>
-        
+        <script src="{%static 'game/sendData.js' %}" type=text/javascript></script>
         <h1 id="gameName">{% block header %} LightGames.no {% endblock %}</h1>
         <div id="gameDisplay">
             {% block addName %}
             <div id='username'>
                 <label>Skriv inn navnet ditt:</label>
                 <input type='text' id='name'>
-                <button id="btn">Registrer</button>
+                <button id="btn" onclick="outputName()">Registrer</button>
             </div>
-            
+
+            <script>
+                //var playerform= document.getElementById("nameform");
+                let playername = document.getElementById("name").value;
+
+            function outputName(){
+                //var playerform= document.getElementById("nameform");
+                //playername = playerform.elements["name"].value;
+                //console.log(playername);
+                let playername = document.getElementById("name").value;
+                console.log("playername is" + playername)
+                
+
+            }
+            </script>
             <script src="{%static 'game/highscores/score.js' %}"></script>
             {% endblock %}
 

@@ -89,16 +89,22 @@ class GameScene extends Phaser.Scene {
         if (gameState.ball.y > gameState.platform.y){ //må sjekke om det er høyere siden den starter på 0
             //gameState.scoreText = this.add.text(ScreenWidth/2, ScreenHeight/2, "GAME OVER", { fontSize: '30px', fill: '#000000' });
             gameState.ball.setCollideWorldBounds(false);
+            //console.log("test")
             //const textStyle = {fill: '#000000', fontSize: '25px'};
             //this.add.text(100, 100, 'GAME OVER! ', { fill: '#000000', fontSize: '35px' });
             //this.add.text(100, 150, "Don't let the ball fall. \nMove by using the left (<-) and right (->) keys.", textStyle);
+            
             if (gameState.ball.y > ScreenHeight){
+                let playername = document.getElementById("name").value;
+                console.log(playername + " your score is " + gameState.score);
+                sendData("Juggle", playername, gameState.score)
+                console.log("name: " + playername)
+                console.log("score: " + gameState.score)
                 this.scene.stop('GameScene');
                 this.scene.start('EndScene');
             }
             
-            //console.log(playername + " your score is " + gamestate.score);
-            //sendData("juggle", playername, gamestate.score)
+            
             
             
         }
