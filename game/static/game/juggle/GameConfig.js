@@ -3,7 +3,7 @@ const gameState = { score: 0};
 const ScreenWidth = screen.width*0.75;
 const ScreenHeight = screen.height*0.75;
 const ballSize = 30;
-let  playername = document.getElementById("name").value; 
+//let  playername = document.getElementById("name").value; 
 
 const config = {
     type: Phaser.AUTO,
